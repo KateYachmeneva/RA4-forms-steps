@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import {TripItem} from "./TripItem/TripItem";
 
 export default function TripList({ trips, deleteTrip, editTrip }) {
-  const sortedTrips = trips.sort((prev, next) =>
-    prev.date < next.date ? -1 : 1
-  );
+  const sortedTrips = trips.sort((prev, next) => (prev.date < next.date ? -1 : 1));
   const tripItems = sortedTrips.map((trip) => (
     <TripItem
       key={trip.id}

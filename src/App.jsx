@@ -4,7 +4,7 @@ import { AddNewTrip } from "./components/AddNewTrip/AddNewTrip";
 import TripList from "./components/TripList/TripList";
 
 const DUMMY_DATA = [
-  { id: "w1", date: 1614538800000, distance: 5.7 },
+  { id: "w1", date: 1614459600000, distance: 5.7 },
   { id: "w2", date: 1618426800000, distance: 10.2 },
   { id: "w3", date: 1624906800000, distance: 15.7 },
 ];
@@ -14,13 +14,16 @@ function App() {
   const [editData, setEditData] = useState({ date: "", distance: "" });
 
   const addNewTripHandler = (newTrip) => {
-    const isNewTrip = trips.filter((trip) => trip.id === newTrip.id);
+    console.log(trips);
+    console.log(newTrip.date);
+    const isNewTrip = trips.find(trip => trip.id=== newTrip.id);
+    console.log(isNewTrip);
     if (isNewTrip) {
       const newObj = {
         ...isNewTrip,
-        distance: +isNewTrip.distance + +newTrip.distance,
-      };
-      setTrip((prevState) => {
+        distance: +isNewTrip.distance + +newTrip.distance
+      }
+       setTrip((prevState) => {
         const filteredTrips = prevState.filter(
           (trip) => trip.date !== isNewTrip.date
         );

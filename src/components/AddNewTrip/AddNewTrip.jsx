@@ -7,6 +7,7 @@ export function AddNewTrip({ data, addNewTrip }) {
   const [inputDate, setInputDate] = useState("");
   const [inputDistance, setInputDistance] = useState("");
   const [id, setId] = useState(null);
+console.log(shortid.generate());
 
   useEffect(() => {
     setInputDate(data.date);
@@ -15,13 +16,17 @@ export function AddNewTrip({ data, addNewTrip }) {
   }, [data.date, data.distance, data.id]);
 
   const onSubmitHandler = (event) => {
+    debugger;
     event.preventDefault();
+   console.log(inputDate);
+
     const convertedDate = convertDate(inputDate);
     const payload = {
       id: id || shortid.generate(),
       date: convertedDate,
       distance: Number(inputDistance),
     };
+    console.log(convertedDate);
     addNewTrip(payload);
     setInputDate("");
     setInputDistance("");

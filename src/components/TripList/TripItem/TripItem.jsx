@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 export function TripItem({ date, deleteTrip, distance, editTrip, id }) {
   const ref = useRef();
-  const convDate = new Date(date).toISOString().slice(0,10).split('-').reverse().join('.');
-  console.log(convDate);
+  const convertDate = new Date(date).toISOString().slice(0,10).split('-').reverse().join('.');
+  console.log(convertDate);
   const onClickHandler = (event) => {
     const { name } = event.target;
     const { id } = ref.current.dataset;
@@ -17,7 +17,7 @@ export function TripItem({ date, deleteTrip, distance, editTrip, id }) {
       style={{ borderBottom: "1px solid #dee2e6" }}
       data-id={id}
     >
-      <div className="col text-center">{convDate}</div>
+      <div className="col text-center">{convertDate}</div>
       <div className="col text-center">{distance}</div>
       <div className="col text-center">
         <div className="row">
