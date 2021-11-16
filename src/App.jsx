@@ -16,7 +16,7 @@ function App() {
   const addNewTripHandler = (newTrip) => {
     console.log(trips);
     console.log(newTrip.date);
-    const isNewTrip = trips.find(trip => trip.id=== newTrip.id);
+    const isNewTrip = trips.find(trip =>( trip.id=== newTrip.id || trip.date === newTrip.date));
     console.log(isNewTrip);
     if (isNewTrip) {
       const newObj = {

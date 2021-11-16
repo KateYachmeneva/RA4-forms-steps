@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export function TripItem({ date, deleteTrip, distance, editTrip, id }) {
   const ref = useRef();
-  const convertDate = new Date(date).toISOString().slice(0,10).split('-').reverse().join('.');
+  const convertDate = new Date(date).toLocaleString().slice(0,10).split('-').reverse().join('.');
   console.log(convertDate);
   const onClickHandler = (event) => {
     const { name } = event.target;

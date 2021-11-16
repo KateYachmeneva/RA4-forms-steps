@@ -16,8 +16,7 @@ console.log(shortid.generate());
   }, [data.date, data.distance, data.id]);
 
   const onSubmitHandler = (event) => {
-    debugger;
-    event.preventDefault();
+   event.preventDefault();
    console.log(inputDate);
 
     const convertedDate = convertDate(inputDate);
